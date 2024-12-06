@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 /// <summary>
@@ -200,11 +201,32 @@ public class Gun : MonoBehaviour
          *  - Number / spread of shotgun bullets : shotgunBullets, shotgunSpread
          * Implement both single shot and shotgun (swap by pressing <SPACE> by default)
          */
-        
-        SpawnBullet(
-            new Vector3{ x = 0.0f, y = 0.0f, z = 0.0f }, 
-            Quaternion.Euler(0.0f, 0.0f, 0.0f)
-        );
+        Debug.Log("spawnoffset:" + spawnOffset);
+        float fixLag = 0.65f;
+        if (shotgun)
+        {
+
+            for (int i = 0; i < shotgunBullets; i++)
+            {
+                float offsetX = MathF.Cos(director.rotation.eulerAngles.z * Mathf.Deg2Rad + MathF.PI/2) * fixLag;
+                float offsetY = MathF.Sin(director.rotation.eulerAngles.z  * Mathf.Deg2Rad + MathF.PI/2) * fixLag;
+                float angleShift = (i - (shotgunBullets / 2.0f)) * shotgunSpread / shotgunBullets;
+                SpawnBullet(
+                    new Vector3 { x = director.position.x + offsetX, y = director.position.y + offsetY, z = director.position.z },
+                    Quaternion.Euler(0.0f, 0.0f, director.rotation.eulerAngles.z + angleShift)
+                );
+
+            }
+        }
+        else{
+            
+            float offsetX = MathF.Cos(director.rotation.eulerAngles.z * Mathf.Deg2Rad + MathF.PI/2) * fixLag ;
+            float offsetY = MathF.Sin(director.rotation.eulerAngles.z  * Mathf.Deg2Rad + MathF.PI/2) * fixLag;
+            SpawnBullet(
+                new Vector3 { x = director.position.x + offsetX, y = director.position.y + offsetY , z = director.position.z },
+                Quaternion.Euler(0.0f, 0.0f, director.rotation.eulerAngles.z)
+            );
+        }
     }
 
     /// <summary>
