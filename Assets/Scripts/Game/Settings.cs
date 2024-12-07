@@ -122,6 +122,15 @@ public class Settings : MonoBehaviour
      *   can call through to the AddPlayer and RemovePlayer respectively.
      *   Do not forget to set the Joining Behavior and the Player Prefab!
      */
+
+    public void  OnPlayerLeft(PlayerInput playerInput)
+    {
+        RemovePlayer(playerInput.gameObject);
+    }
+    public void OnPlayerJoined(PlayerInput playerInput)
+    {
+        AddPlayer(playerInput.gameObject);
+    }
     
     /// <summary>
     /// Called when the script instance is first loaded.
