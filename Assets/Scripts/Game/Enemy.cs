@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Quaternion = System.Numerics.Quaternion;
 
 /// <summary>
 /// Main Enemy behavior script.
@@ -74,6 +75,21 @@ public class Enemy : MonoBehaviour
          *    Use mRigidBody.MovePosition to move the enemy
          * Implement a simple AI, which will head towards the closest player and follow them.
          */
+         GameObject nearestPlayer = GameManager.Instance.NearestPlayer(transform.position);
+         if (nearestPlayer != null)
+         {
+             // Making the enemies look at the nearest player 
+             Vector3 EnemyToPlayerVector = nearestPlayer.transform.position - transform.position  ;
+             Debug.Log(Vector3.forward);
+             quaternion enemyRotation = quaternion.LookRotation(EnemyToPlayerVector, Vector3.forward);
+             transform.rotation = enemyRotation;
+             
+             // Moving the enemies towards the player 
+             // using normalized to have a constant speed of movement
+             mRigidBody.MovePosition(transform.position + EnemyToPlayerVector.normalized * speed  * Time.fixedDeltaTime);
+         }
+         
+         
     }
 
     /// <summary>

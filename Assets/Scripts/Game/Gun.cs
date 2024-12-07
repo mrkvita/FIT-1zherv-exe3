@@ -201,7 +201,6 @@ public class Gun : MonoBehaviour
          *  - Number / spread of shotgun bullets : shotgunBullets, shotgunSpread
          * Implement both single shot and shotgun (swap by pressing <SPACE> by default)
          */
-        Debug.Log("spawnoffset:" + spawnOffset);
         float fixLag = 0.65f;
         if (shotgun)
         {
