@@ -273,7 +273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &255148522
 RectTransform:
   m_ObjectHideFlags: 0
@@ -732,7 +732,7 @@ PrefabInstance:
     - target: {fileID: 1204133201242880325, guid: 44209977f93d7854bac517dff34087fc, type: 3}
       propertyPath: m_Actions
       value: 
-      objectReference: {fileID: -944628639613478452, guid: c06ad4d7ede85024ea36043f45828161, type: 3}
+      objectReference: {fileID: -944628639613478452, guid: 4280a90a0446ce1469f9d4af4103a363, type: 3}
     - target: {fileID: 1204133201242880325, guid: 44209977f93d7854bac517dff34087fc, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -747,7 +747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1204133201242880325, guid: 44209977f93d7854bac517dff34087fc, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: M&K1
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1204133201242880325, guid: 44209977f93d7854bac517dff34087fc, type: 3}
       propertyPath: m_ActionEvents.Array.size
@@ -755,7 +755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1204133201242880325, guid: 44209977f93d7854bac517dff34087fc, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1204133201242880325, guid: 44209977f93d7854bac517dff34087fc, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_ActionId
@@ -803,7 +803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1204133201242880325, guid: 44209977f93d7854bac517dff34087fc, type: 3}
       propertyPath: m_ActionEvents.Array.data[11].m_ActionId
-      value: 81e03d89-c41d-4715-b3b4-f6a98e4cb6ae
+      value: 5586c122-1686-4993-b32f-3400f1dce771
       objectReference: {fileID: 0}
     - target: {fileID: 1204133201242880325, guid: 44209977f93d7854bac517dff34087fc, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_ActionName
@@ -851,7 +851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1204133201242880325, guid: 44209977f93d7854bac517dff34087fc, type: 3}
       propertyPath: m_ActionEvents.Array.data[11].m_ActionName
-      value: PlayerMap/ShowVPad[/Keyboard/v]
+      value: PlayerMap/ToggleVPadUI[/Keyboard/v]
       objectReference: {fileID: 0}
     - target: {fileID: 1204133201242880325, guid: 44209977f93d7854bac517dff34087fc, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
@@ -887,7 +887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1204133201242880325, guid: 44209977f93d7854bac517dff34087fc, type: 3}
       propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1204133201242880325, guid: 44209977f93d7854bac517dff34087fc, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2026,9 +2026,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.30771366
+    x: 0.23896435
     y: 0
-    width: 0.38457268
+    width: 0.5220713
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
